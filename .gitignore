@@ -1,4 +1,6 @@
-venv/
-.venv/
+*.egg-info/
+dist/
+build/
 __pycache__/
-jobs.json
+.venv/
+venv/

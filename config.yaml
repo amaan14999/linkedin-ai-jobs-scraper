@@ -1,22 +1,15 @@
 linkedin:
-  # REQUIRED
   keywords: "software engineer"
   location: "Bengaluru"
-
-  # OPTIONAL
-  distance: 50 # km (LinkedIn supports 10/25/50/100)
-  f_WT: # adds f_WT=2
-  experience_levels: "2,3" # 1=Internship,2=Entry,3=Associate,4=Mid-Senior,5=Director,6=Executive
-  easy_apply: false # adds f_AL=true
-  company_ids: [] # e.g. [1441, 1035]
-
-  hours_old: 48 # recency window
+  distance: 50
+  f_WT:
+  experience_levels: "2,3"
+  easy_apply: false
+  company_ids: []
+  hours_old: 48
   fetch_description: true
-
   results_wanted: 100
   offset: 0
-
-  # polite scraping
   delay_seconds: 2.5
   jitter_seconds: 1.5
   timeout_seconds: 12
