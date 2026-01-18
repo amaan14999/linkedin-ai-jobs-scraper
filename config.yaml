@@ -7,7 +7,7 @@ linkedin:
   easy_apply: false
   company_ids: []
   hours_old: 48
-  fetch_description: true
+  fetch_description: false
   results_wanted: 100
   offset: 0
   delay_seconds: 2.5
