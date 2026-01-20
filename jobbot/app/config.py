@@ -14,7 +14,7 @@ class LinkedInSearchConfig:
     distance: int = 25
 
     # optional f_WT (1/2/3). If None -> not sent
-    f_WT: Optional[int] = None
+    f_WT: Optional[str] = None
 
     experience_levels: str = "2,3"
     easy_apply: bool = False
@@ -29,6 +29,7 @@ class LinkedInSearchConfig:
     delay_seconds: float = 2.5
     jitter_seconds: float = 1.5
     timeout_seconds: int = 12
+    filter_out_companies: List[str] = field(default_factory=list)
 
 
 @dataclass
@@ -42,8 +43,5 @@ def load_config(path: str = "config.yaml") -> AppConfig:
 
     linkedin_dict: Dict[str, Any] = data.get("linkedin", data)
     cfg = LinkedInSearchConfig(**linkedin_dict)
-
-    if cfg.f_WT is not None and cfg.f_WT not in (1, 2, 3):
-        raise ValueError("linkedin.f_WT must be 1, 2, or 3")
 
     return AppConfig(linkedin=cfg)

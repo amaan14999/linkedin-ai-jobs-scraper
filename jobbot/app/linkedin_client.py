@@ -139,8 +139,8 @@ def scrape(cfg: LinkedInSearchConfig, print_urls: bool = False) -> List[Job]:
         jobs_in_batch = len(job_cards)
 
         if print_urls:
-            # req_url = requests.Request("GET", SEARCH_URL, params=params).prepare().url
-            # print(req_url)
+            req_url = requests.Request("GET", SEARCH_URL, params=params).prepare().url
+            print(req_url)
             print(f"Fetching page starting at {start}, received {jobs_in_batch} jobs.")
 
         for job_card in job_cards:
@@ -161,6 +161,9 @@ def scrape(cfg: LinkedInSearchConfig, print_urls: bool = False) -> List[Job]:
             company = company_a.get_text(strip=True) if company_a else "N/A"
 
             job_url = f"https://www.linkedin.com/jobs/view/{job_id}"
+
+            if company in cfg.filter_out_companies:
+                continue
 
             description = None
             if cfg.fetch_description:

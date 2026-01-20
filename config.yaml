@@ -1,15 +1,16 @@
 linkedin:
   keywords: "software engineer"
   location: "Bengaluru"
-  distance: 50
-  f_WT:
-  experience_levels: "2,3"
+  distance: 40
+  f_WT: "1,2,3"
+  experience_levels: "2"
   easy_apply: false
   company_ids: []
-  hours_old: 48
+  hours_old: 24
   fetch_description: false
   results_wanted: 100
   offset: 0
   delay_seconds: 2.5
   jitter_seconds: 1.5
   timeout_seconds: 12
+  filter_out_companies: ["Wipro", "Infosys"]
