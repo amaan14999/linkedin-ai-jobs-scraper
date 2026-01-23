@@ -160,10 +160,16 @@ def scrape(cfg: LinkedInSearchConfig, print_urls: bool = False) -> List[Job]:
             company_a = company_tag.find("a") if company_tag else None
             company = company_a.get_text(strip=True) if company_a else "N/A"
 
+            if cfg.filter_out_companies:
+                comp_lower = company.lower()
+                blocked = any(
+                    block.lower().strip() in comp_lower
+                    for block in cfg.filter_out_companies
+                    if block
+                )
+                if blocked:
+                    continue
             job_url = f"https://www.linkedin.com/jobs/view/{job_id}"
-
-            if company in cfg.filter_out_companies:
-                continue
 
             description = None
             if cfg.fetch_description:
