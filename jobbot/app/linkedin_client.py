@@ -168,6 +168,7 @@ def scrape(cfg: LinkedInSearchConfig, print_urls: bool = False) -> List[Job]:
                     if block
                 )
                 if blocked:
+                    print(f"Skipping filtered company: {company}")
                     continue
             job_url = f"https://www.linkedin.com/jobs/view/{job_id}"
 

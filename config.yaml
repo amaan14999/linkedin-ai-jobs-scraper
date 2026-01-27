@@ -13,4 +13,5 @@ linkedin:
   delay_seconds: 2.5
   jitter_seconds: 1.5
   timeout_seconds: 12
-  filter_out_companies: ["Wipro", "Infosys"]
+  filter_out_companies:
+    ["Wipro", "Infosys", "Turing", "Accenture services Pvt Ltd"]
